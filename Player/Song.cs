@@ -32,5 +32,15 @@
         {
             Like = false;
         }
+
+        public void Deconstruct(out string Artist, out string Title,out  string Lyrics,out int Duration,out string Album,out bool? Like)
+        {
+            Title = this.Title;
+            Lyrics = this.Lyrics;
+            Duration = this.Duration;
+            Artist = this.Artist.Name;
+            Album = this.Album.Title;
+            Like = this.Like;
+        }
     }
 }

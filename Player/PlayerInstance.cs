@@ -134,12 +134,16 @@ namespace Player
 
         private (string title, (int min, int sec) duration, bool isPlayingNow, bool? like) GetSongData(Song song)
         {
-            var title = song.Title;
+          /*  var title = song.Title;
             var isPlayingNow = song == PlayingSong;
             var min = song.Duration / 60;
             var sec = song.Duration % 60;
-            
-            return (title, (min, sec), isPlayingNow, song.Like);
+            */
+            var ( _, title,  _,  duration, _, like) = song;
+            var min = duration / 60;
+            var sec = duration % 60;
+            var isPlayingNow = song == PlayingSong;
+            return (title, (min, sec), isPlayingNow, like);
         }
 
         /*private dynamic GetSongData(Song song)
