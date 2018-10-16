@@ -104,7 +104,7 @@ namespace Player
             foreach (var song in Songs)
             {
                 var data = GetSongData(song);
-                var songInfo = $"{data.title} - {data.duration.min}:{data.duration.sec}";
+                var songInfo = $"{data.title.Cut(3)} - {data.duration.min}:{data.duration.sec}";
                 if (data.isPlayingNow)
                 {
                     songInfo = $"***{songInfo}***";
