@@ -13,8 +13,8 @@ namespace Player
             //VolumeExample();
             //AddOverloadingExample();
             //SortAndShuffleExample();
-
-            ClassicUsagePlayerExample();
+            SortAndShuffleExample();
+           // ClassicUsagePlayerExample();
 
             Console.ReadLine();
  
