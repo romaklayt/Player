@@ -68,6 +68,21 @@ namespace Player
             Songs = artist.Songs;
         }
 
+        public void Filter(Genres genre)
+        {
+            var filteredSongs = new List<Song>();
+
+            foreach (var song in this.Songs)
+            {
+                if ((song.Genre & genre) == genre)
+                {
+                    filteredSongs.Add(song);
+                }
+            }
+
+            this.Songs = filteredSongs;
+        }
+
         public bool Play(out Song playingSong, bool loop = false)
         {
             playingSong = PlayingSong = PlayingSong ?? Songs[0];

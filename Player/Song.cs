@@ -21,6 +21,8 @@
 
         public bool? Like { get; set; }
 
+        public Genres Genre { get; set; }
+
         //public System.Nullable<bool> Like { get; set; }
 
         public void LikeSong()

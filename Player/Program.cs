@@ -122,7 +122,8 @@ namespace Player
                     Duration = 300,
                     Lyrics = @"Для тебя не осталось слов и мыслей хороших...",
                     Album = album,
-                    Artist = artist
+                    Artist = artist,
+                    Genre = Genres.Pop /*0001*/ | Genres.Rock /*0010*/ //0011
                 },
                 new Song()
                 {
@@ -130,7 +131,8 @@ namespace Player
                     Duration = 300,
                     Lyrics = @"Твои глаза... останови планету...",
                      Album = album,
-                    Artist = artist
+                    Artist = artist,
+                    Genre = Genres.Rock
                 },
                 new Song()
                 {
