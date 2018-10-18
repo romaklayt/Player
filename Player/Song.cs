@@ -20,6 +20,7 @@
         public Album Album { get; set; }
 
         public bool? Like { get; set; }
+        public Genres genre;
 
         //public System.Nullable<bool> Like { get; set; }
 

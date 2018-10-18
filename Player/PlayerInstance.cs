@@ -89,7 +89,7 @@ namespace Player
                         Console.Clear();
 
                         ListSongs();
-                        Console.WriteLine(PlayingSong.Title + ": " + PlayingSong.Lyrics);
+                        Console.WriteLine(PlayingSong.Title + ": " + PlayingSong.Lyrics + " - " +PlayingSong.genre);
 
                         System.Threading.Thread.Sleep(2000);
                     }

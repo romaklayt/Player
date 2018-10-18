@@ -122,15 +122,18 @@ namespace Player
                     Duration = 300,
                     Lyrics = @"Для тебя не осталось слов и мыслей хороших...",
                     Album = album,
-                    Artist = artist
+                    Artist = artist,
+                    genre = Genres.Dance|Genres.House
+                    
                 },
                 new Song()
                 {
                     Title = "Твои глаза(5)",
-                    Duration = 300,
+                    Duration = 100,
                     Lyrics = @"Твои глаза... останови планету...",
                      Album = album,
-                    Artist = artist
+                    Artist = artist,
+                    genre = Genres.Pop
                 },
                 new Song()
                 {
@@ -143,14 +146,14 @@ namespace Player
                 new Song()
                 {
                     Title = "Парень(3)",
-                    Duration = 300,
+                    Duration = 350,
                     Lyrics = @"Парень, ты меня так сильно ранил...",
  Album = album,
                     Artist = artist
                 },
                 new Song()    {
                     Title = "Случайная(4)",
-                    Duration = 300,
+                    Duration = 200,
                     Lyrics = @"Ты пишешь мне письма такие печальные...",
  Album = album,
                     Artist = artist
