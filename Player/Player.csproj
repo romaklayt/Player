@@ -42,18 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artist.cs" />
+    <Compile Include="Tracks\Artist.cs" />
     <Compile Include="Enums\Genres.cs" />
-    <Compile Include="Playlist.cs" />
-    <Compile Include="Album.cs" />
+    <Compile Include="Tracks\Playlist.cs" />
+    <Compile Include="Tracks\Album.cs" />
     <Compile Include="Skins\AllCaps.cs" />
     <Compile Include="Skins\ClassicSkin.cs" />
     <Compile Include="Skins\ColorSkin.cs" />
     <Compile Include="Skins\ColorSkin2.cs" />
     <Compile Include="Skins\Skin.cs" />
-    <Compile Include="Song.cs" />
-    <Compile Include="PlayerInstance.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Tracks\Song.cs" />
+    <Compile Include="Core\PlayerInstance.cs" />
+    <Compile Include="Core\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
