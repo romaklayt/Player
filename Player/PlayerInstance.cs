@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Player.Skins;
 
 namespace Player
 {
     public class PlayerInstance
     {
+        private Skin skin;
         private int _volume;
 
         public bool Locked { get; set; }
@@ -14,7 +16,51 @@ namespace Player
 
         public Song PlayingSong { get; set; }
 
-        public List<Song> Songs { get; set; }        
+        public List<Song> Songs { get; set; }
+
+        public PlayerInstance()
+        {
+            Console.WriteLine("Выберите скин:");
+            Console.WriteLine("1-Allcaps");
+            Console.WriteLine("2-Classic");
+            Console.WriteLine("3-ColorSkin");
+            Console.WriteLine("4-RandColor");
+            var answ = Console.ReadLine();
+            switch (answ)
+            {
+                   case "1":
+                       skin=new AllCaps();
+                       break;
+                   case "2":
+                       skin=new ClassicSkin();
+                       break;
+                   case "3":
+                       skin=new ColorSkin(ConsoleColor.Cyan);
+                       break;
+                   case "4":
+                       skin=new ColorSkin2();
+                       break;
+            }
+        }
+
+        public PlayerInstance(Skin skinUser)
+        {
+            switch (skinUser)
+            {
+                case AllCaps caps:
+                    skin=new AllCaps();
+                    break;
+                case ClassicSkin clas:
+                    skin=new ClassicSkin();
+                    break;
+                case ColorSkin csColorSkin:
+                    skin=new ColorSkin(ConsoleColor.Cyan);
+                    break;
+                case ColorSkin2 csColorSkin2:
+                    skin=new ColorSkin2();
+                    break; 
+            }
+        }
 
         public int Volume
         {
@@ -91,7 +137,7 @@ namespace Player
             {
                 Playing = true;
             }
-
+            
             if (Playing)
             {
                 int cycles = loop ? 5 : 1;
@@ -99,12 +145,12 @@ namespace Player
                 {
                     foreach (var song in Songs)
                     {
+                        skin.Clear();
                         PlayingSong = song;
 
-                        Console.Clear();
-
+                        
                         ListSongs();
-                        Console.WriteLine(PlayingSong.Title + ": " + PlayingSong.Lyrics);
+                        skin.Render(PlayingSong.Title + ": " + PlayingSong.Lyrics);
 
                         System.Threading.Thread.Sleep(2000);
                     }
@@ -129,20 +175,20 @@ namespace Player
                 {
                     if (data.like.Value)
                     {
-                        Console.BackgroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine(songInfo);
-                        Console.ResetColor();
+                        
+                        skin.Render(songInfo);
+                       
                     }
                     else
                     {
-                        Console.BackgroundColor = ConsoleColor.Magenta;
-                        Console.WriteLine(songInfo);
-                        Console.ResetColor();
+                        
+                        skin.Render(songInfo);
+                       
                     }
                 }
                 else
                 {
-                    Console.WriteLine(songInfo);
+                    skin.Render(songInfo);
                 }                 
             }
         }

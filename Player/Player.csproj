@@ -43,9 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist.cs" />
-    <Compile Include="Genres.cs" />
+    <Compile Include="Enums\Genres.cs" />
     <Compile Include="Playlist.cs" />
     <Compile Include="Album.cs" />
+    <Compile Include="Skins\AllCaps.cs" />
+    <Compile Include="Skins\ClassicSkin.cs" />
+    <Compile Include="Skins\ColorSkin.cs" />
+    <Compile Include="Skins\ColorSkin2.cs" />
+    <Compile Include="Skins\Skin.cs" />
     <Compile Include="Song.cs" />
     <Compile Include="PlayerInstance.cs" />
     <Compile Include="Program.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Player.Skins;
 
 namespace Player
 {
@@ -19,7 +20,7 @@ namespace Player
 
         private static void ClassicUsagePlayerExample()
         {
-            var player = new PlayerInstance();
+            var player = new PlayerInstance(new ColorSkin2());
 
             Song currentPlayingSong = null;
             Song[] songs = null;
