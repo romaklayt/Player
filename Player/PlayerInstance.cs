@@ -47,16 +47,16 @@ namespace Player
         {
             switch (skinUser)
             {
-                case AllCaps _:
+                case AllCaps caps:
                     skin=new AllCaps();
                     break;
-                case ClassicSkin _:
+                case ClassicSkin clas:
                     skin=new ClassicSkin();
                     break;
-                case ColorSkin _:
+                case ColorSkin csColorSkin:
                     skin=new ColorSkin(ConsoleColor.Cyan);
                     break;
-                case ColorSkin2 _:
+                case ColorSkin2 csColorSkin2:
                     skin=new ColorSkin2();
                     break; 
             }
