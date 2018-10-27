@@ -40,7 +40,7 @@ namespace Player
             Album album = null;
             Artist artist = null;
 
-            var player = new PlayerInstance();
+            var player = new PlayerInstance(new ColorSkin2());
             CreatePlayerItems(out songs, out artist, out album);
 
             Console.WriteLine("-- Playing Album --");
@@ -54,7 +54,7 @@ namespace Player
 
         private static void SortAndShuffleExample()
         {
-            var player = new PlayerInstance();
+            var player = new PlayerInstance(new ColorSkin2());
 
             Song currentPlayingSong = null;
             Song[] songs = null;
@@ -81,7 +81,7 @@ namespace Player
 
         private static void VolumeExample()
         {
-            var player = new PlayerInstance();         
+            var player = new PlayerInstance(new ColorSkin2());
 
             Console.WriteLine(player.Volume);
 

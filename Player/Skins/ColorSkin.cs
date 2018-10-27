@@ -11,12 +11,12 @@ namespace Player.Skins
             this.color = color;
         }
 
-        public override void Clear()
+        public  void Clear()
         {
             Console.Clear();
         }
 
-        public override void Render(string text)
+        public  void Render(string text)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(text);

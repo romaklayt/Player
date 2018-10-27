@@ -8,12 +8,12 @@ namespace Player.Skins
 {
     class AllCaps:Skin
     {
-        public override void Clear()
+        public  void Clear()
         {
             Console.Clear();
         }
 
-        public override void Render(string text)
+        public  void Render(string text)
         {
             Console.WriteLine(text.ToUpper());
         }

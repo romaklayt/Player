@@ -6,7 +6,7 @@ namespace Player.Skins
     {
         private readonly Random rand = new Random();
 
-        public override void Clear()
+        public  void Clear()
         {
             Console.Clear();
             var j = 30;
@@ -15,7 +15,7 @@ namespace Player.Skins
             Console.WriteLine();
         }
 
-        public override void Render(string text)
+        public  void Render(string text)
         {
             var color = rand.Next(1, 15);
             Console.ForegroundColor = (ConsoleColor) color;

@@ -17,47 +17,24 @@ namespace Player
         public Song PlayingSong { get; set; }
 
         public List<Song> Songs { get; set; }
-
-        public PlayerInstance()
-        {
-            Console.WriteLine("Выберите скин:");
-            Console.WriteLine("1-Allcaps");
-            Console.WriteLine("2-Classic");
-            Console.WriteLine("3-ColorSkin");
-            Console.WriteLine("4-RandColor");
-            var answ = Console.ReadLine();
-            switch (answ)
-            {
-                   case "1":
-                       skin=new AllCaps();
-                       break;
-                   case "2":
-                       skin=new ClassicSkin();
-                       break;
-                   case "3":
-                       skin=new ColorSkin(ConsoleColor.Cyan);
-                       break;
-                   case "4":
-                       skin=new ColorSkin2();
-                       break;
-            }
-        }
+        
+        
 
         public PlayerInstance(Skin skinUser)
         {
             switch (skinUser)
             {
                 case AllCaps caps:
-                    skin=new AllCaps();
+                    skin=caps;
                     break;
                 case ClassicSkin clas:
-                    skin=new ClassicSkin();
+                    skin = clas;
                     break;
                 case ColorSkin csColorSkin:
-                    skin=new ColorSkin(ConsoleColor.Cyan);
+                    skin=csColorSkin;
                     break;
                 case ColorSkin2 csColorSkin2:
-                    skin=new ColorSkin2();
+                    skin=csColorSkin2;
                     break; 
             }
         }
