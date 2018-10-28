@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using GenericPlayer.Enums;
 using Player.Skins;
+using GenericPlayer;
 
 namespace Player
 {
@@ -20,7 +22,7 @@ namespace Player
 
         private static void ClassicUsagePlayerExample()
         {
-            var player = new PlayerInstance(new ColorSkin2());
+            var player = new PlayerInstance<Song>(new ColorSkin2());
 
             Song currentPlayingSong = null;
             Song[] songs = null;
@@ -40,7 +42,7 @@ namespace Player
             Album album = null;
             Artist artist = null;
 
-            var player = new PlayerInstance(new ColorSkin2());
+            var player = new PlayerInstance<Song>(new ColorSkin2());
             CreatePlayerItems(out songs, out artist, out album);
 
             Console.WriteLine("-- Playing Album --");
@@ -54,7 +56,7 @@ namespace Player
 
         private static void SortAndShuffleExample()
         {
-            var player = new PlayerInstance(new ColorSkin2());
+            var player = new PlayerInstance<Song>(new ColorSkin2());
 
             Song currentPlayingSong = null;
             Song[] songs = null;
@@ -81,7 +83,7 @@ namespace Player
 
         private static void VolumeExample()
         {
-            var player = new PlayerInstance(new ColorSkin2());
+            var player = new PlayerInstance<Song>(new ColorSkin2());
 
             Console.WriteLine(player.Volume);
 
@@ -97,14 +99,14 @@ namespace Player
 
         private static void CreatePlayerItems(out Song[] songs, out Artist artist, out Album album)
         {
-            artist = new Artist() { Name = "Loboda", Songs = new List<Song>(), Albums = new Album[1] };
-            album = new Album() { Artist = artist, Title = "Superstar", Songs = new List<Song>() };
+            artist = new Artist() { Name = "Loboda", Items = new List<Item>(), Albums = new Album[1] };
+            album = new Album() { Artist = artist, Title = "Superstar", Items = new List<Item>() };
             songs = CreateSongs(artist, album);
 
             artist.Albums[0] = album;
 
-            artist.Songs = new List<Song>() { songs[0], songs[2], songs[4] };
-            album.Songs = new List<Song>() { songs[1], songs[3], songs[4] };
+            artist.Items = new List<Item>() { songs[0], songs[2], songs[4] };
+            album.Items = new List<Item>() { songs[1], songs[3], songs[4] };
 
             songs[0].Like = true;
             songs[3].Like = false;

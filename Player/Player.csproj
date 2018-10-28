@@ -43,21 +43,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist.cs" />
-    <Compile Include="Enums\Genres.cs" />
-    <Compile Include="Playlist.cs" />
     <Compile Include="Album.cs" />
     <Compile Include="Skins\AllCaps.cs" />
     <Compile Include="Skins\ClassicSkin.cs" />
     <Compile Include="Skins\ColorSkin.cs" />
     <Compile Include="Skins\ColorSkin2.cs" />
     <Compile Include="Skins\Skin.cs" />
-    <Compile Include="Song.cs" />
     <Compile Include="PlayerInstance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Song.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericPlayer.\GenericPlayer.csproj">
+      <Project>{af69fd24-cb95-4e7a-bf0a-40f4307303a5}</Project>
+      <Name>GenericPlayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

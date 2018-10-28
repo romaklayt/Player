@@ -1,0 +1,6 @@
+C:\Users\Рома\source\repos\Player\GenericPlayer\obj\Debug\GenericPlayer.csprojAssemblyReference.cache
+C:\Users\Рома\source\repos\Player\GenericPlayer\obj\Debug\GenericPlayer.csproj.CoreCompileInputs.cache
+C:\Users\Рома\source\repos\Player\GenericPlayer\bin\Debug\GenericPlayer.dll
+C:\Users\Рома\source\repos\Player\GenericPlayer\bin\Debug\GenericPlayer.pdb
+C:\Users\Рома\source\repos\Player\GenericPlayer\obj\Debug\GenericPlayer.dll
+C:\Users\Рома\source\repos\Player\GenericPlayer\obj\Debug\GenericPlayer.pdb

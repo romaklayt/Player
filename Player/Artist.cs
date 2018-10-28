@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GenericPlayer;
 
 namespace Player
 {
@@ -19,7 +20,7 @@ namespace Player
 
         public string Name { get; set; }
 
-        public List<Song> Songs { get; set; }
+        public List<Item> Items { get; set; }
 
         public Album[] Albums { get; set; }
     }

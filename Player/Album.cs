@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GenericPlayer;
 
 namespace Player
 {
@@ -6,7 +7,7 @@ namespace Player
     {
         public string Title { get; set; }
 
-        public List<Song> Songs { get; set; }
+        public List<Item> Items { get; set; }
 
         public Artist Artist { get; set; }
     }
