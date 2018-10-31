@@ -8,15 +8,11 @@ namespace Player
 {
     public class PlayerInstance<T>:GenericPlayer.PlayerCore<T> where T:Song
     {
-        private Skin skin;
+        private ISkin skin;
       
-
         public T PlayingSong { get; set; }
-
         
-        
-
-        public PlayerInstance(Skin skinUser)
+        public PlayerInstance(ISkin skinUser)
         {
             switch (skinUser)
             {

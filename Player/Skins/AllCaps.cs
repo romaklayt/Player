@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Player.Skins
 {
-    class AllCaps:Skin
+    class AllCaps:ISkin
     {
         public  void Clear()
         {

@@ -1,6 +1,6 @@
 ﻿namespace Player.Skins
 {
-    public interface Skin
+    public interface ISkin
     {
         void Clear();
         void Render(string text);

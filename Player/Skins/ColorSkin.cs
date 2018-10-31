@@ -2,7 +2,7 @@
 
 namespace Player.Skins
 {
-    internal class ColorSkin : Skin
+    internal class ColorSkin : ISkin
     {
         private readonly ConsoleColor color;
 

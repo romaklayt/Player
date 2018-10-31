@@ -2,7 +2,7 @@
 
 namespace Player.Skins
 {
-    internal class ColorSkin2 : Skin
+    internal class ColorSkin2 : ISkin
     {
         private readonly Random rand = new Random();
 

@@ -3,6 +3,7 @@
 namespace GenericPlayer.Enums
 {
     [Flags]
+    [Serializable]
     public enum Genres
     {
         None = 0,

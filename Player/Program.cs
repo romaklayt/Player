@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 using GenericPlayer.Enums;
 using Player.Skins;
 using GenericPlayer;
@@ -15,11 +17,31 @@ namespace Player
             //SortAndShuffleExample();
 
             ClassicUsagePlayerExample();
-
+            //LoadPlaylist();
+            
             Console.ReadLine();
  
         }
 
+        private static void SaveAsPlaylist(Playlist<Song> songs)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Playlist<Song>));
+            SerializeSongs(songs, xmlSerializer);
+            Console.WriteLine("Save playlist");
+        }
+        private static void LoadPlaylist()
+        {
+            var player = new PlayerInstance<Song>(new ColorSkin2());
+
+            Song currentPlayingSong = null;
+            Song[] newSongs = null;
+            Album album = null;
+            Artist artist = null;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Song[]));
+            newSongs = DeserializeSongs(xmlSerializer);
+            player.Add(newSongs);
+            player.Play(out currentPlayingSong);
+        }
         private static void ClassicUsagePlayerExample()
         {
             var player = new PlayerInstance<Song>(new ColorSkin2());
@@ -28,11 +50,31 @@ namespace Player
             Song[] songs = null;
             Album album = null;
             Artist artist = null;
-
+            
             CreatePlayerItems(out songs, out artist, out album);
-
-            player.Add(songs);
+            var playlist = new Playlist<Song>() {Items = new List<Song>(songs)}; 
+            player.Add(playlist);
+            SaveAsPlaylist(playlist);
+            //player.Add(songs);
             player.Play(out currentPlayingSong);
+        }
+        private static Song[] DeserializeSongs(XmlSerializer xmlSerializer)
+        {
+            Song[] songs;
+            using (FileStream fs = new FileStream("songs.xml", FileMode.OpenOrCreate))
+            {
+                songs = (Song[])xmlSerializer.Deserialize(fs);
+            }
+            return songs;
+        }
+
+        private static void SerializeSongs(Playlist<Song> songs, XmlSerializer xmlSerializer)
+        {
+            
+            using (FileStream fs = new FileStream("songs.xml", FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fs, songs);
+            }
         }
 
         private static void AddOverloadingExample()

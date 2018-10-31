@@ -1,9 +1,14 @@
-﻿using GenericPlayer;
+﻿using System;
+using GenericPlayer;
 
 namespace Player
-{
+{   [Serializable]
     public class Song:Item 
     {
+        public Song()
+        {
+
+        }
         public Song(string title = "Unknown", string lirycs = "Unknown", int duration = 0):base(title,duration)
         {
             this.Lyrics = lirycs;

@@ -2,7 +2,7 @@
 
 namespace Player.Skins
 {
-    internal class ClassicSkin : Skin
+    internal class ClassicSkin : ISkin
     {
         public  void Clear()
         {
