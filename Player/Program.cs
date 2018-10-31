@@ -29,17 +29,32 @@ namespace Player
             Song[] songs = null;
             Album album = null;
             Artist artist = null;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Song[]));
+            // SerializeSongs(out songs, out album, out artist, xmlSerializer);
+            songs = DeserializeSongs(xmlSerializer);
+            player.Add(songs);
+            player.Play(out currentPlayingSong);
+        }
 
+        private static Song[] DeserializeSongs(XmlSerializer xmlSerializer)
+        {
+            Song[] songs;
+            using (FileStream fs = new FileStream("songs.xml", FileMode.OpenOrCreate))
+            {
+                songs = (Song[])xmlSerializer.Deserialize(fs);
+            }
+
+            return songs;
+        }
+
+        private static void SerializeSongs(out Song[] songs, out Album album, out Artist artist, XmlSerializer xmlSerializer)
+        {
             CreatePlayerItems(out songs, out artist, out album);
-
-            XmlSerializer xmlSerializer = new XmlSerializer(songs.GetType());
 
             using (FileStream fs = new FileStream("songs.xml", FileMode.OpenOrCreate))
             {
                 xmlSerializer.Serialize(fs, songs);
             }
-            player.Add(songs);
-            player.Play(out currentPlayingSong);
         }
 
         private static void AddOverloadingExample()

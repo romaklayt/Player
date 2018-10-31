@@ -18,7 +18,7 @@ namespace Player
 
         }
         public string Title { get; set; }
-        [XmlIgnore]
+        
         public string Lyrics { get; set; }
         
         public int Duration { get; set; }

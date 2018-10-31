@@ -21,7 +21,7 @@ namespace Player
         public string Name { get; set; }
         [XmlIgnore]
         public List<Song> Songs { get; set; }
-        [XmlIgnore]
+        
         public Album[] Albums { get; set; }
     }
 }
