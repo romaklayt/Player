@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Player.Skins;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace Player
 {
@@ -29,6 +32,12 @@ namespace Player
 
             CreatePlayerItems(out songs, out artist, out album);
 
+            XmlSerializer xmlSerializer = new XmlSerializer(songs.GetType());
+
+            using (FileStream fs = new FileStream("songs.xml", FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fs, songs);
+            }
             player.Add(songs);
             player.Play(out currentPlayingSong);
         }
