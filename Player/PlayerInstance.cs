@@ -7,7 +7,7 @@ namespace Player
 {
     public class PlayerInstance
     {
-        private Skin skin;
+        private ISkin skin;
         private int _volume;
 
         public bool Locked { get; set; }
@@ -20,7 +20,7 @@ namespace Player
         
         
 
-        public PlayerInstance(Skin skinUser)
+        public PlayerInstance(ISkin skinUser)
         {
             switch (skinUser)
             {
